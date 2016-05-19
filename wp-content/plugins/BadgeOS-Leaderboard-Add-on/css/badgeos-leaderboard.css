@@ -1,0 +1,62 @@
+table.badgeos-leaderboard {
+  background: white;
+  margin-bottom: 1.25em;
+  border: solid 1px #ecf0f1; 
+}
+table.badgeos-leaderboard thead{
+    background: #bdc3c7;
+    font-weight: bold; 
+}
+table.badgeos-leaderboard tbody{
+    color: black;
+}
+table.badgeos-leaderboard thead tr th,
+table.badgeos-leaderboard thead tr td{
+	padding: 0.5em 0.625em 0.625em;
+	font-size: 0.875em;
+	color: #222222;
+	text-align: left;
+}
+
+table.badgeos-leaderboard tr:nth-of-type(even) {
+	background: #f5f5f5; 
+}
+table.badgeos-leaderboard tr:hover{
+	background: #7f8c8d; 
+}
+
+table.badgeos-leaderboard thead tr th,
+table.badgeos-leaderboard tbody tr td,
+table.badgeos-leaderboard tr td{
+	display: table-cell;
+	line-height: 1.125em;
+	padding-left: 5px;
+
+}
+table.badgeos-leaderboard thead tr th{
+	cursor: pointer;
+	cursor: hand;
+	background-repeat: no-repeat;
+	background-position: center right;
+}
+
+table.badgeos-leaderboard thead tr th:first-child{
+	background-image: url(../img/bg.gif);
+}
+table.badgeos-leaderboard thead tr th:hover{
+	background-image: url(../img/bg.gif);
+}
+table.badgeos-leaderboard .default-sort{
+	background-image: url(../img/asc.gif);
+}
+
+table.badgeos-leaderboard thead tr .headerSortUp{
+	background-image: url(../img/asc.gif);
+}
+table.badgeos-leaderboard thead tr .headerSortDown{
+	background-image: url(../img/desc.gif);
+}
+
+table.badgeos-leaderboard tr td img{
+	margin-right: .125em;
+}

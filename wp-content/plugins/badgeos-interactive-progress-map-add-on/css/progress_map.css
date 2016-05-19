@@ -1,0 +1,106 @@
+.container{
+	margin: auto;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.progressMap_title{
+	margin: 5px 0;
+	padding: 5px 0;
+	font-size: 24px;
+}
+.colorPicker_cirle{
+	width: 100%;
+	box-sizing : border-box;
+	margin: 20px 0 0px;
+    float:left;
+}
+.section_circle{
+    width:500px;
+}
+.lbl_circle{
+    float: left;
+    margin: 0 80px 0 0;
+}
+.lbl_circle p {
+    font-weight: bold;
+    margin:0px;
+    font-size: 16px;
+}
+.colorPicker_cir.impColor{
+    background:#1CBE30;
+    float: left;
+    height: 20px;
+    margin: 0 20px 0 0;
+    position: relative;
+    width: 20px;
+}
+.colorPicker_cir.impColor .fa{
+    left:3px;
+    top:3px;
+    font-size:13px;
+}
+.lbl_span{
+    background-color: #1CBE30;
+    border: 1px solid #909390;
+    float: left;
+    height: 18px;
+    padding: 5px 10px;
+    width: 120px;
+    font-weight: bold;
+    color:#fff;
+}
+.colorPicker_cir{
+	width: 100px;
+	height: 100px;
+	display: block;
+	border-radius: 80px;
+	border: 1px solid #b3b3b3;
+	position: relative;	
+	cursor: pointer;
+	margin: 0 auto;
+}
+.colorPicker_cirle p{
+	text-align: center;
+}
+
+.colorPicker_cir .fa{
+	position: absolute;
+	top : 40px;
+	left : 40px;
+	font-size : 22px;
+    color:white;
+}
+
+.colorPicker_cirle.btn{
+	text-align: center;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+    background: none;
+    width:400px;
+    margin:30px 0px 0px;
+}
+.colorPicker_cirle.btn .button-large{
+    float:right;
+}
+.color_picker_save_btn{
+	background-color: #b3b3b3;
+	border: 1px solid #b3b3b3;
+	border-radius: 2px;
+	padding: 5px 8px;
+	cursor: pointer;
+}
+
+#completedCircle{
+
+}
+
+.badgeos-interactive-progress-map p{
+    background: #75C93D;
+    color: #FFF;
+    border-radius: 5px;
+    padding: 3px 10px;
+    text-align: center;
+    font-size: 18px;
+}

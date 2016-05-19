@@ -1,0 +1,23 @@
+group-status
+public
+group-invite-status
+members
+bp_invite_codes_code
+groupyes
+bp_invite_codes_code_hidd...
+_wpnonce
+a81191ea4d
+_wp_http_referer
+/badgeos/groups/create/step/group-settings/
+save
+Next Step
+group_id
+18
+
+http://localhost/badgeos/groups/create/step/group-settings/
+
+<div class="bp-template-notice error" id="message">
+
+ <p>The invitation code <b>groupyes</b> is already being used, it has been changed to <b>6YEl0g2</b>.</p>
+
+</div>

@@ -1,0 +1,113 @@
+/*
+Theme Name: fortunato
+
+Adding support for language written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+http://codex.wordpress.org/Right_to_Left_Language_Support
+
+*/
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+.sticky .entry-header .entry-title:before {
+	left: inherit;
+	right: -1em;
+}
+.spaceRight {
+	padding-right: 0;
+	padding-left: 5px;
+}
+.spaceLeft {
+	padding-right: 5px;
+	padding-left: 0;
+}
+.sepHentry {
+	direction: ltr;
+}
+blockquote {
+  padding: 1.5em 3.5em 1.5em 1.5em;
+  border-left: 1px solid #cea525;
+  border-right: 3px solid #cea525;
+}
+blockquote::before {
+  left: inherit;
+  right: 10px;
+}
+.post-navigation .nav-previous {
+	text-align: left;
+}
+#comments article footer img {
+  float: right;
+  margin-right: inherit;
+  margin-left: 1em;
+}
+#comments .reply {
+  right: inherit;
+  left: 0;
+}
+#comments ol ol {
+  padding-left: inherit;
+  padding-right: 5%;
+}
+.closeSearch {
+  float: left;
+}
+.widget_archive li, .widget_categories li {
+	text-align: left;
+}
+.widget_archive li a, .widget_categories li a {
+	float: right;
+}
+.comment-reply-title small {
+  float: left;
+}
+
+.main-navigation ul ul {
+	text-align: right;
+	padding-right: 0;
+}
+.main-navigation ul ul ul {
+	left: inherit;
+	right: 100%;
+}
+.main-navigation li a:not(:last-child):after {
+    margin: 0 10px 0 0;
+	float: left;
+}
+.main-navigation ul ul li a:not(:last-child):after {
+    content: "\f104";
+    margin: 0 10px 0 0;
+    float: left;
+}
+@media screen and (max-width: 768px) {
+	.menu-toggle, .main-navigation a {
+		text-align: right;
+	}
+	.menu-toggle i {
+		float: left;
+	}
+	.main-navigation ul ul, .main-navigation ul ul ul {
+		padding-left: 0;
+		padding-right: 5%;
+	}
+	.main-navigation ul {
+		padding: 0;
+	}
+}
+@media (max-width: 579px) {
+	.sticky .entry-title {
+		padding-right: 1em;
+		padding-left: inherit;
+	}
+	.sticky .entry-header .entry-title:before {
+		right: 0;
+	}
+	.entry-meta .spaceLeftRight {
+		margin-right: inherit;
+		margin-left: 5px;
+	}
+}

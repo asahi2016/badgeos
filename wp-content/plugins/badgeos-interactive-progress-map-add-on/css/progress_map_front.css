@@ -1,0 +1,437 @@
+a{color:#bc360a}
+#colorSelector{
+    width: 30px;
+    height: 30px;
+    background-color: #b3b3b3;
+    border: 3px solid #000000;
+    cursor: pointer;
+    border-radius: 20px;
+}
+.outerContainer{
+    border: 1px solid #b3b3b3;
+	float:left;
+    margin-top: 30px;
+    padding : 0;
+    width:100%;
+}
+.achi_container{
+    width: 100px;
+    display: block;
+    float: left;
+    min-height:150px;
+}
+.achi_text{
+    min-height: 35px;
+    text-align: center;
+    font-size: 12px;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color:#bc360a;
+    margin: 0px 0px 14px;
+}
+
+.achi_img{
+    height: 80px;
+}
+.achi_text span{
+    /*background: #E8E5CE;*/
+    padding: 2px 5px;
+}
+.achievement {
+    /*border: 3px solid #b3b3b3;
+    border-radius: 50px;*/
+    box-sizing: border-box;
+    margin: 13px 13px 0 auto;
+    /*height: 90px;
+    padding: 22px 8px;*/
+    text-align: center;
+    width: 100px;
+    font-family: arial;
+    font-size: 14px;
+}
+.colorPicker{
+    cursor: pointer;
+}
+.questionContainer{
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+	float:left;
+	width:545px;
+    margin:0 0 0 10px;
+}
+.scroll{float:left;width:100%; padding-top: 25px;}
+.ques{
+    display: block;
+    float: left;
+    min-height: 155px;
+    width: 85px;
+}
+.ques_img{
+    width: 55px;
+    height: 55px;
+    /*border-radius: 30px;
+    border: 2px solid #b3b3b3;*/
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 6px 0px;
+}
+.ques_img img{
+    max-width: none;
+}
+.ques_text a{
+    /*background: #E8E5CE;*/
+    padding: 2px 5px;
+}
+.ques_text{
+	margin:12px 0px 15px;
+    text-align: center;
+    font-size: 12px;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 35px;
+}
+.ques_status,.achi_status{
+    height: 30px;
+    margin: 3px auto;
+}
+.status{
+    margin : 5px auto;
+    border: 1px solid #b3b3b3;
+    border-radius: 15px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-size: 13px;
+    color: white;
+}
+.status.success{
+    background-color: #1CBE30;
+}
+.status .fa{
+    margin-top : 3px;
+}
+.status.lock{
+    background-color: #F9B244;
+}
+.status.warning{
+    background-color: #7E98DD;
+}
+.container{
+    margin: auto;
+    /*padding-right: 15px;
+    padding-left: 15px;*/
+	/*width: 1200px;*/
+    width:110%;
+    float:left;
+}
+.buttonContainer{
+    float: right;
+    display: inline-block;
+    height: 100%;
+}
+/* div.slider_btn{
+    width: 15px;
+    height: 100%;
+    background-color: #D9DBD9;
+    border-right: 1px solid #b3b3b3;
+    border-left: 1px solid #b3b3b3;
+    display: block;
+    float: left;
+    cursor: pointer;
+    text-align: center;
+    color: #514F4F;
+    cursor: pointer;
+} */
+.slider_btn .fa{
+    margin-top: 60px;
+}
+.header_Container{
+    display: block;
+    width: 100%;
+}
+.header_Container:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+#slickCarousel{
+    border: 1px solid #b3b3b3;
+    border-radius: 3px;
+    box-shadow: 0px 0px 15px #b3b3b3;
+}
+.sliderContent{
+    width: 100%;
+	height: 200px;
+    position: relative;
+}
+.image_container{
+    position: absolute;
+    top: 0;
+    left : 0;
+}
+.slider_text_content{
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+}
+.slider_text_content h2{
+    margin: 10px;
+}
+.slider_text_content p{
+    margin: 20px;
+    font-family: arial;
+    font-size: 14px;
+    display: block;
+}
+.welcome_container{
+    height: 90px;
+    border: 1px solid #b3b3b3;
+    border-radius: 3px;
+    box-shadow: 3px 3px 10px #b3b3b3;
+    background-color: #F2EFEF;
+}
+.userIcon_container{
+    width: 60px;
+    height: 70px;
+    float: left;
+    margin: 8px;
+    border: 1px solid #b3b3b3;
+    border-radius: 3px;
+}
+.userName_container{
+    float: left;
+    display: block;
+    margin-top: 13px;
+}
+.welcome_msg,.user_name,.logout{
+    margin: 3px;
+    padding: 0px;
+    font-size: 14px;
+    font-family: arial;
+}
+.logout{
+    color: #AE380E;
+    cursor: pointer;
+}
+.completed_level_container{
+    position: relative;
+    height: 50px;
+    border-radius: 3px;
+    border: 1px solid #b3b3b3;
+    box-shadow: 3px 3px 10px #b3b3b3;
+    margin: 10px 0;
+    font-family: arial;
+    font-size: 14px;
+    background-color: #F2EFEF;
+    cursor: pointer;
+}
+.goal_setting{
+    height: 50px;
+    border: 1px solid #b3b3b3;
+    border-radius: 3px;
+    box-shadow: 3px 3px 10px #b3b3b3;
+    margin: 10px 0;
+    font-family: arial;
+    font-size: 14px;
+    background-color: #F2EFEF;
+    cursor: pointer;
+    position: relative;
+    z-index: 1000;
+}
+.completed_level{
+    position: absolute;
+    z-index: 1002;
+}
+.comp_questions{
+    display: none;
+    width: 100%;
+    background-color: #F2EFEF;
+    z-index: 1001;
+    border: 1px solid #b3b3b3;
+    border-top: 0;
+    margin-left: -1px;
+    border-radius: 3px;
+}
+.comp_questions ul,.comp_questions ul li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.comp_questions ul li{
+    padding: 3px;
+}
+#drp{
+    width: 100%;
+    box-sizing : border-box;
+    padding: 7px;
+    border: 1px solid #b3b3b3;
+    background-color: #fff;
+}
+.completed_level .fa, .goal_setting .fa{
+    margin: 17px 10px;
+    color: rgb(9, 178, 9);
+}
+.goal_setting .fa{
+    color: rgb(11, 106, 186);
+}
+button.slick-prev, button.slick-next{
+    display: none ! important;
+}
+@media only screen and (max-width: 1240px){
+	.container {width: 100% }
+	.achi_container{width:15%;}
+	.questionContainer{width:80%;}
+}
+/* @media only screen and (min-width : 1199px) {
+    .container {
+        width : 1200px;
+    }
+} */
+@media only screen and (max-width : 900px) {
+	.achi_container{width: 20%;}
+	.questionContainer{width:75%}
+
+}
+@media only screen and (max-width : 798px){
+		.outerContainer{width:100%}
+		.achi_container{width:15%}
+		.questionContainer{width:80%}
+}
+
+@media only screen and (min-width : 798px) {
+    #slickCarousel{
+		width: 100%;
+        float: left;
+    }
+    .left_container{
+        width: 33%;
+        float: right;
+    }
+
+}
+
+@media only screen and (min-width : 521px) and (max-width : 797px) {
+    #slickCarousel {
+        width: 100%;
+        float: left;
+    }
+
+    .left_container {
+        width: 100%;
+        float: right;
+    }
+
+    .welcome_container {
+        height: 120px;
+        width: 48%;
+        float: left;
+    }
+
+    .completed_level_container, .goal_setting {
+        height: 37px;
+        width: 48%;
+        float: right;
+        margin: 0;
+    }
+
+    .userIcon_container {
+        margin: 23px 15px;
+    }
+
+    .userName_container {
+        margin-top: 30px;
+    }
+
+    .completed_level .fa, .goal_setting .fa {
+        margin: 10px;
+    }
+
+    .goal_setting {
+        margin-top: 5px;
+    }
+
+    #drp {
+        float: right;
+        margin-top: 5px;
+        padding: 7px;
+        width: 48%;
+    }
+
+    .outerContainer {
+        border: 1px solid #b3b3b3;
+        margin-top: 30px;
+        padding: 0;
+        width: 100%;
+    }
+}
+@media only screen and (max-width :600px){
+	.achi_container{width: 20%;}
+	.questionContainer{width:75%}
+	.ques{width:80px;}
+}
+
+@media only screen and (max-device-width : 520px){
+    #slickCarousel{
+        width: 100%;
+        float: left;
+    }
+    .left_container{
+        width: 100%;
+        float: right;
+    }
+    .welcome_container{
+        height: 120px;
+        width : 100%;
+        float: left;
+    }
+    .completed_level, .goal_setting{
+        height: 55px;
+        width: 100%;
+        float: right;
+        margin: 0;
+    }
+    .goal_setting{
+        margin-top: 8px;
+    }
+}
+@media only screen and (max-width :480px) and (min-width:320px){
+	.achi_container{width: 25%;}
+	.questionContainer{width:70%}
+	.ques{width:95px;}
+	.container{width: 95%;padding: 0 2%;}
+    h2{font-size:22px;}
+}
+@media only screen and (max-width :435px)
+{
+	.ques{width:85px;}
+}
+
+@media only screen and (max-width :320px)
+{
+
+    .outerContainer{
+        border: 1px solid #b3b3b3;
+        height: 150px;
+        margin-top: 30px;
+        padding : 0;
+        width: 100%;
+    }
+    h2{font-size:22px;}
+}
+
+.ques_img .badgeos-item-pending{
+    opacity: 0.4;
+}
+
+.imp_achiev_desc p{
+    font-weight: bold;
+    margin: 10px 0 0 15px;
+}

@@ -1,0 +1,20 @@
+79	krishna	BADGE-207   Maximum earnings achievement and Refresh issue fixed	                    Yesterday 09:56 AM	3	http://192.168.2.5:3000/svn/badgeos/wp-content/plugins/badgeos
+78	krishna	BADGE-188   "All Achievement of Type" Badges Not Achieved issue fixed	                01/19/2016 03:44 PM	1	http://192.168.2.5:3000/svn/badgeos/wp-content/plugins/badgeos
+76	krishna	BADGE-188   All Achievement Type auto submission success messge issue fixed.	        01/11/2016 04:32 PM	2	http://192.168.2.5:3000/svn/badgeos/wp-content/plugins/badgeos
+62	krishna	Badgeos     Update from 1.4.6 to 1.4.7	                                                2/23/2015 12:43 PM	9	http://192.168.2.5:3000/svn/badgeos/wp-content/plugins/badgeos
+57	krishna	BADGE-192   Auto accepted achievement issue fixed	                                    12/22/2015 03:50 PM	1	http://192.168.2.5:3000/svn/badgeos/wp-content/plugins/badgeos
+55	krishna	BADGE-192   Teacher id mapping to new user register as subscriber role.
+                        Auto accepted submission success message issue fix...	                    12/21/2015 05:57 PM	2   http://192.168.2.5:3000/svn/badgeos/wp-content/plugins/badgeos
+51	arun	BADGE-167   Group Filter Dropdown issue fixed for BadgeOs  submission approved statu    11/27/2015 06:08 PM	1	http://192.168.2.5:3000/svn/badgeos/wp-content/plugins/badgeos
+40	arun	BADGE-175   Checking if BadgeOS Group Management addon is available 	                10/09/2015 12:37 PM	1	http://192.168.2.5:3000/svn/badgeos/wp-content/plugins/badgeos
+32	arun	BadgeOS     Comments inserted for Group management plugin	                            09/30/2015 03:41 PM	5	http://192.168.2.5:3000/svn/badgeos/wp-content/plugins/badgeos
+31	arun	BadgeOS     1.4.6 Branch Merged	                                                        9/30/2015 12:41 PM	10	http://192.168.2.5:3000/svn/badgeos/wp-content/plugins/badgeos
+30	arun	BADGE-167   Group Dropdown issue fixed	                                                9/11/2015 03:09 PM	2	http://192.168.2.5:3000/svn/badgeos/wp-content/plugins/badgeos
+28	arun	BADGE-167   Spacing issue fixed	                                                        9/09/2015 11:37 AM	1	http://192.168.2.5:3000/svn/badgeos/wp-content/plugins/badgeos
+20	arun	BADGE-163   Design issues in the suggested achievments - Fixed	                        8/25/2015 11:27 AM	3	http://192.168.2.5:3000/svn/badgeos/wp-content/plugins/badgeos
+19	arun	BADGE-162   CK Editor Jquery version implemented and issue has been fixed.	            8/19/2015 06:31 PM	3	http://192.168.2.5:3000/svn/badgeos/wp-content/plugins/badgeos
+17	arun	BADGE-159   CK editor implemented	                                                    08/13/2015 03:48 PM	5	http://192.168.2.5:3000/svn/badgeos/wp-content/plugins/badgeos
+13	arun	BADGE-150   save draft added for submission box	                                        8/13/2015 01:14 PM	1	http://192.168.2.5:3000/svn/badgeos/wp-content/plugins/badgeos
+11	arun	BADGE-159   Meta boxes added for save draft functionality
+                        Submission filter completed successfully based on logged in user...	        8/13/2015 01:11 PM	5 	http://192.168.2.5:3000/svn/badgeos/wp-content/plugins/badgeos
+1	arun	Badgeos     1.4.5 Initial commit	                                                    07/28/2015 05:35 PM2259 http://192.168.2.5:3000/svn/badgeos/wp-content/plugins/badgeos
