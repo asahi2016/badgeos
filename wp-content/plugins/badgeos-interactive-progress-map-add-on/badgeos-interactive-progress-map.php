@@ -202,7 +202,9 @@ class BadgeOS_Interactive_Progress_Map {
                 $api_params = array(
                     'edd_action' => 'check_license',
                     'license' => $license,
-                    'item_name' => urlencode( $item_name )
+                    'item_name' => urlencode( $item_name ),
+                    'author'      => 'Credly',
+                    'version'     => '1.0.1'
                 );
 
                 $response = wp_remote_get( add_query_arg( $api_params, $store_url ), array( 'timeout' => 15, 'sslverify' => false ) );

@@ -44,12 +44,17 @@ function badgeos_interactive_progress_map_license_page($slug = null) {
                 </tr>
                 <?php } ?>
             <?php } ?>
+            <tr>
+                <th></th>
+                <td>
+                    <?php
+                    wp_nonce_field( 'badgeos_settings_nonce', 'badgeos_settings_nonce' ); ?>
+                    <p><input type="submit" class="button-secondary" name="interactive_progress_map_license_activate" value="<?php _e('Activate License'); ?>"/>
+                    </p>
+                </td>
+            </tr>
             </tbody>
         </table>
-        <?php
-        wp_nonce_field( 'badgeos_settings_nonce', 'badgeos_settings_nonce' ); ?>
-        <p><input type="submit" class="button-secondary" name="interactive_progress_map_license_activate" value="<?php _e('Activate License'); ?>"/>
-        </p>
     </form>
     </div>
     <script type="application/javascript">
