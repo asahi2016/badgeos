@@ -2,7 +2,7 @@
 /**
  * Plugin Name: BadgeOS Interactive Progress Map Add-On
  * Plugin URI: http://www.badgeos.org/
- * Version: 1.0.6
+ * Version: 1.0.0
  * Author: Learning Times
  * Description: This BadgeOS add-on integrates interactive progress map for users.
  * Text Domain: badgeos-interactive-progress-map
@@ -16,7 +16,7 @@ class BadgeOS_Interactive_Progress_Map {
     public $basename;
     public $directory_path;
     public $directory_url;
-    public $version = '1.0.5';
+    public $version = '1.0.0';
 
 
     function __construct() {
@@ -186,7 +186,7 @@ class BadgeOS_Interactive_Progress_Map {
                     'plugin_file' => __FILE__,
                     'item_name'   => IPM_SL_ITEM_NAME,
                     'author'      => 'Credly',
-                    'version'     => '1.0.6',
+                    'version'     => '1.0.0',
                 )
             );
 
@@ -210,9 +210,10 @@ class BadgeOS_Interactive_Progress_Map {
                     return false;
                 $license_data = json_decode( wp_remote_retrieve_body( $response ) );
 
-                if( $license_data->license != 'valid' ) {
-                    update_option($slug. '-license_status', $license_data->license);
-                }
+                $license_data->license = ($license_data->license != 'valid') ? 'invalid' : $license_data->license;
+
+                update_option($slug. '-license_status', $license_data->license);
+
             }
         }
     }
@@ -233,7 +234,7 @@ class BadgeOS_Interactive_Progress_Map {
                         'plugin_file' => __FILE__,
                         'item_name'   => IPM_SL_ITEM_NAME,
                         'author'      => 'Credly',
-                        'version'     => '1.0.6',
+                        'version'     => '1.0.0',
                     )
                 );
                 $slug = basename($this->basename, '.php');

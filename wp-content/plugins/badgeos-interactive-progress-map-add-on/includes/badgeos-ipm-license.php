@@ -34,7 +34,7 @@ function badgeos_interactive_progress_map_license_page($slug = null) {
             </tr>
             <?php if( false !== $license ) { ?>
                 <?php if( $status !== false && $status == 'valid' ) { ?>
-                <tr valign="top">
+                <tr valign="top" class="activate_status">
                     <th scope="row" valign="top">
                         <?php _e('Activate License'); ?>
                     </th>
@@ -56,6 +56,7 @@ function badgeos_interactive_progress_map_license_page($slug = null) {
         (function($) {
             $(document).ready(function () {
                 $('#<?php _e($slug); ?>-license_key').keypress(function () {
+                    $('.activate_status').hide();
                     $('.badgeos-license-status').removeClass().addClass('badgeos-license-status inactive');
                     $('.badgeos-license-status').html('<?php _e( 'License Status: <strong>Inactive</strong>'); ?>');
                 });
