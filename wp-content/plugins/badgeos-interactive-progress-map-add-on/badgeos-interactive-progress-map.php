@@ -194,7 +194,7 @@ class BadgeOS_Interactive_Progress_Map {
             $license = get_option(  $slug. '-license_key' );
             $status = get_option(  $slug. '-license_status' );
 
-            if(($license !== false) && ($status !== false) && ($status == 'valid')){
+            if(($license !== false) && ($status !== false)){
 
                 $store_url = IPM_SL_STORE_URL;
                 $item_name = IPM_SL_ITEM_NAME;
@@ -238,10 +238,13 @@ class BadgeOS_Interactive_Progress_Map {
                 );
                 $slug = basename($this->basename, '.php');
                 $license = get_option(  $slug. '-license_key' );
-                $input['licenses'][$slug] = $license;
 
-                //Validate license key
-                $badgeos_ipm_updater->validate_license($input);
+                if(!empty($license)) {
+                    $input['licenses'][$slug] = $license;
+
+                    //Validate license key
+                    $badgeos_ipm_updater->validate_license($input);
+                }
 
             }
 
