@@ -29,21 +29,8 @@ function badgeos_interactive_progress_map_license_page($slug = null) {
                     </span>
                     <br>
                     <p class="error" style="display: none;color: red;">License key field is required.</p>
-                    <label class="description" for="<?php _e($slug); ?>-license_key" style="margin-top: 20px;float: left;"><?php _e('Enter your license key'); ?></label>
                 </td>
             </tr>
-            <?php if( false !== $license ) { ?>
-                <?php if( $status !== false && $status == 'valid' ) { ?>
-                <tr valign="top" class="activate_status">
-                    <th scope="row" valign="top">
-                        <?php _e('Activate License'); ?>
-                    </th>
-                    <td>
-                        <span style="color:green;"><?php _e('active'); ?></span>
-                    </td>
-                </tr>
-                <?php } ?>
-            <?php } ?>
             <tr>
                 <th></th>
                 <td>
@@ -60,11 +47,6 @@ function badgeos_interactive_progress_map_license_page($slug = null) {
     <script type="application/javascript">
         (function($) {
             $(document).ready(function () {
-                $('#<?php _e($slug); ?>-license_key').keypress(function () {
-                    $('.activate_status').hide();
-                    $('.badgeos-license-status').removeClass().addClass('badgeos-license-status inactive');
-                    $('.badgeos-license-status').html('<?php _e( 'License Status: <strong>Inactive</strong>'); ?>');
-                });
                 $('#<?php _e($slug); ?>-license_key').focus(function () {
                     $('p.error').hide();
                 });
