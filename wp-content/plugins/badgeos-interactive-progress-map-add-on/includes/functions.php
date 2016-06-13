@@ -342,7 +342,13 @@ function interactive_progress_map_render_form($post_type = '', $id = 0){
             $icon = null;
             $style = null;
 
-            foreach($achievements_all as $achievement){
+            foreach($achievements_all as $k => $achievement){
+
+                //Unset hidden badge achievement
+                if(function_exists('badgeos_get_hidden_achievement_by_id') && !empty(badgeos_get_hidden_achievement_by_id($achievement->ID))){
+                    unset($achievements_all[$k]);
+                    continue;
+                }
 
                 //Completed -  status = success, icon = fa-check
                 //Skipped -  status = warning, icon = fa-warning
@@ -396,6 +402,11 @@ function interactive_progress_map_render_form($post_type = '', $id = 0){
             $form .='</div>'; //end scroll
             $form .='</div>'; //end questionContainer
             $form .='</div>'; //end outerContainer
+        }
+
+        //If particular achievement type has no achievement, The form content set as null value
+        if(!$achievements_all){
+            $form = '';
         }
     }
 

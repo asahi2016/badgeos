@@ -66,6 +66,12 @@ function badgeos_get_suggested_achievements(){
 
     foreach($achievements_all as $k => $id){
 
+        //Unset hidden badge achievement
+        if(function_exists('badgeos_get_hidden_achievement_by_id') && !empty(badgeos_get_hidden_achievement_by_id($id))){
+            unset($achievements_all[$k]);
+            continue;
+        }
+
         //check skipped achievements by current logged in user
         $post_data = array(
             'author' => get_current_user_id(),
