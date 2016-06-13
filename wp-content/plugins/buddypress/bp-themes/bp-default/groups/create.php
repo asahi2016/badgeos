@@ -246,7 +246,6 @@ get_header( 'buddypress' ); ?>
 							<p><?php _e( 'Once you have built up friend connections you will be able to invite others to your group.', 'buddypress' ); ?></p>
 						</div>
 
-
 					<?php endif; ?>
 
 					<?php wp_nonce_field( 'groups_create_save_group-invites' ); ?>

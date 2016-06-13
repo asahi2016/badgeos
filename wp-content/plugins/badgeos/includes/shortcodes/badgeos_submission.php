@@ -90,5 +90,6 @@ function badgeos_submission_form( $atts = array() ) {
 	} else {
 		$output .= sprintf( '<p><em>%s</em></p>', __( 'You must be logged in to post a submission.', 'badgeos' ) );
 	}
+
 	return $output;
 }

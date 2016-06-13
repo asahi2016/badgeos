@@ -30,7 +30,7 @@ if ( isset( $HTTP_RAW_POST_DATA ) ) {
 }
 
 // Load bbPress
-require_once('./bb-load.php');
+require_once( './bb-load.php' );
 
 
 

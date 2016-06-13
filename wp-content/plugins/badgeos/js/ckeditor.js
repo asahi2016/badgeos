@@ -21,6 +21,9 @@
         if($('#badgeos_submission_content').length>0) {
             CKEDITOR.replace('badgeos_submission_content');
         }
+
+        $("span.cke_toolbox .cke_toolbar_break").css('clear','inherit');
+
     });
 
 })(jQuery);

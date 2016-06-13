@@ -25,18 +25,8 @@ function badgeos_bp_group_submission_filters( $output, $atts ) {
 	}
 
 	if ( 'false' !== $atts['show_filter'] && badgeos_user_can_manage_submissions() ) {
-
-        if(class_exists("BadgeOS_Group_Management") && function_exists('badgeos_get_user_role')){
-            // Load Groups based on user roles
-            $user_role = badgeos_get_user_role( absint( get_current_user_id() ));
-            $user_id = ($user_role=="author")?absint( get_current_user_id() ):'';
-            $group_meta_query = ($user_role=="school_admin")?array ( array ('key' => 'school_id','value' => absint( get_current_user_id() ) ) ):'';
-        }
-
 		$bp_public_groups = groups_get_groups(
 			array(
-                'user_id' => $user_id,
-                'meta_query' => $group_meta_query,
 				'orderby' => 'name',
 				'order'   => 'ASC'
 			)

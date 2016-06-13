@@ -1,10 +1,10 @@
-=== BadgeOS Community Add-on ===
-Contributors: learningtimes, badgeos, credly, webdevstudios, Messenlehner, rzen, williamsba1, LisaSabinWilson, tw2113
+﻿=== BadgeOS Community Add-on ===
+Contributors: learningtimes, badgeos, credly, asahitechnologies
 Donate link: http://badgeos.org/contribute/donate/
 Tags: badge, badges, openbadges, credly, OBI, mozilla, open badges, achievement, award, reward, engagement, submission, nomination, buddypress, community, API, open credit, credit, bbpress, plugin
 Requires at least: WordPress 3.6.0, BuddyPress 1.7.0 & BadgeOS 1.4.0
 Tested up to: 4.3
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 License: GNU AGPLv3
 License URI: http://www.gnu.org/licenses/agpl-3.0.html
 
@@ -164,6 +164,10 @@ Thanks for asking!  Please do share back code modifications or enhancements you 
 
 
 == Changelog ==
+
+= 1.2.3 =
+* Updated: Get user ID if groups_join_specific_group is the current filter being executed
+* Updated: Check for appropriate groupID if groups_join_specific_group is the current filter, before awarding achievement
 
 = 1.2.2 =
 Fixed: Add groups_join_specific_group triggers for groups that are by request or invite only.

@@ -12,4 +12,4 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-require dirname(__FILE__) . '/classes/class-bp-notifications-notification.php';
+require dirname( __FILE__ ) . '/classes/class-bp-notifications-notification.php';

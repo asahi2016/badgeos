@@ -1,6 +1,6 @@
 <?php
 
-require('./bb-load.php');
+require( './bb-load.php' );
 
 bb_auth( 'logged_in' );
 

@@ -1,5 +1,5 @@
 <?php
-require('./bb-load.php');
+require( './bb-load.php' );
 
 if ( bb_is_login_required() )
 	bb_auth( 'logged_in' );

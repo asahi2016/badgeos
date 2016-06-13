@@ -1,7 +1,7 @@
 <?php
 
 // Load bbPress
-require('./bb-load.php');
+require( './bb-load.php' );
 
 // SSL redirect if required
 bb_ssl_redirect();

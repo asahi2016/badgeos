@@ -1,5 +1,5 @@
 <?php
-require_once('./bb-load.php');
+require_once( './bb-load.php' );
 
 // Redirect if we require SSL and it isn't
 bb_ssl_redirect();
