@@ -751,3 +751,47 @@ function badgeos_render_feedback_buttons( $feedback_id = 0 ) {
 	// Return our filterable output
 	return apply_filters( 'badgeos_render_feedback_buttons', $output, $feedback_id );
 }
+
+/**
+ * Remove the hidden post link displayed in next post link
+ *
+ * @param $link
+ * @return string
+ */
+function badgeos_remove_next_hidden_achievement_link($link) {
+
+	//Get next post object
+	$next_post = get_next_post();
+
+	$next_post_id = $next_post->ID;
+
+	if(!empty(badgeos_get_hidden_achievement_by_id($next_post_id)))
+		$link = '';
+
+	return $link;
+}
+add_filter('next_post_link', 'badgeos_remove_next_hidden_achievement_link');
+
+
+/**
+ * Remove the hidden post link displayed in previous post link
+ *
+ * @param $link
+ * @return string
+ */
+function badgeos_remove_previous_hidden_achievement_link($link) {
+
+	//Get previous post object
+	$previous_post = get_previous_post();
+
+	$previous_post_id = $previous_post->ID;
+
+	//Check hidden post, If yes, link set as null
+	if(!empty(badgeos_get_hidden_achievement_by_id($previous_post_id)))
+		$link = '';
+
+	//Return post link
+	return $link;
+}
+
+add_filter('previous_post_link', 'badgeos_remove_previous_hidden_achievement_link');
