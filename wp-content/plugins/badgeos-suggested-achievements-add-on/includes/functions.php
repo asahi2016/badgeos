@@ -38,12 +38,18 @@ function badgeos_get_suggested_achievements(){
 
     // Build achievement type array
     foreach ( $achievement_types as $achievement_type){
+
+        // Grab our hidden badges (used to filter the query)
+        $hidden = badgeos_get_hidden_achievement_ids( sanitize_title($achievement_type->post_title) );
+
+        $skipped_achievements = array_merge(badgeos_get_user_skipped_achievements(), $hidden );
+
         $args = array(
             'posts_per_page'   => -1, // unlimited achievements
             'offset'           => 0,  // start from first row
             'post_type'        => sanitize_title($achievement_type->post_title), // Filter only achievement type posts from title
-            'post__not_in'        => badgeos_get_user_skipped_achievements(), // excluding skipped achievements of user
-            'post_status'        => 'publish',
+            'post__not_in'     => $skipped_achievements, // excluding skipped achievements of user and hidden achievements of specific type
+            'post_status'      => 'publish',
             'suppress_filters' => false,
             'achievement_relationsihp' => 'any',
             'orderby' => ' menu_order',
@@ -65,12 +71,6 @@ function badgeos_get_suggested_achievements(){
     }
 
     foreach($achievements_all as $k => $id){
-
-        //Unset hidden badge achievement
-        if(function_exists('badgeos_get_hidden_achievement_by_id') && !empty(badgeos_get_hidden_achievement_by_id($id))){
-            unset($achievements_all[$k]);
-            continue;
-        }
 
         //check skipped achievements by current logged in user
         $post_data = array(
