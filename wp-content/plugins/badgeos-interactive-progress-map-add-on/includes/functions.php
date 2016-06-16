@@ -152,6 +152,9 @@ add_action( 'wp_ajax_get_progress_map', 'get_progress_map' );
  */
 function badgeos_is_completed_achievement_type($post_type = NULL){
 
+    // Grab our hidden badges (used to filter the query)
+    $hidden = badgeos_get_hidden_achievement_ids( $post_type );
+
     // Arguments for fetching achievements
     $args = array(
         'posts_per_page'   => -1, // unlimited achievements
@@ -163,6 +166,7 @@ function badgeos_is_completed_achievement_type($post_type = NULL){
         'orderby' => 'menu_order',
         'order' => 'ASC',
         'fields' => 'ids',
+        'post__not_in'   => $hidden
     );
 
     $all_achievements = get_posts( $args );
