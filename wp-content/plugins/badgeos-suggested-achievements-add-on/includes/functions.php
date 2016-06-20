@@ -203,7 +203,9 @@ function suggested_achievements_skip_ajax(){
         $post = get_post( absint( $achievement_id ));
         $next= get_adjacent_post( false, '', false );
         if($next){
-            $redirect_url = get_post_permalink($next->ID);
+            $nextId = badgeos_get_next_previous_achievement_id($achievement_id , 'next');
+            $nextId = ($nextId) ? $nextId : $next->ID;
+            $redirect_url = get_post_permalink($nextId);
         }else{
             $redirect_url = home_url();
         }
@@ -222,6 +224,69 @@ function suggested_achievements_skip_ajax(){
     wp_send_json_success( $response );
 }
 add_action( 'wp_ajax_suggested_achievements_skip_ajax', 'suggested_achievements_skip_ajax' );
+
+
+/**
+ * Get next or previous post id , without hidden achievement id
+ *
+ * @param $current_achievement_id
+ * @param $flag
+ * @return integer
+ */
+function badgeos_get_next_previous_achievement_id($current_achievement_id , $flag ){
+
+
+    $nested_post_id = null;
+
+    $access = false;
+
+    // Redirecting user page based on achievements
+    $post = get_post( absint( $current_achievement_id ));
+
+    //Get hidden achievements ids
+    $hidden = badgeos_get_hidden_achievement_ids( $post->post_type );
+
+    // Fetching achievement types
+    $param = array(
+        'posts_per_page'   => -1, // All achievements
+        'offset'           => 0,  // Start from first achievement
+        'post_type'=> $post->post_type, // set post type as achievement to filter only achievements
+        'orderby' => 'menu_order',
+        'order' => 'DESC',
+    );
+
+
+    $achievement_types = get_posts($param);
+
+    foreach ($achievement_types as $achievement){
+
+        //Checks achievement in hidden badges
+        if(in_array($achievement->ID, $hidden)) {
+
+            //Compare next achievement
+            if($achievement->ID > $current_achievement_id && $flag == 'next')
+                $access = true;
+
+            //Compare previous achievement
+            if($achievement->ID < $current_achievement_id && $flag == 'previous')
+                $access = true;
+
+            continue;
+        }
+
+        if($access) {
+
+            //Get next or previous achievement without hidden badges
+            if (!in_array($achievement->ID, $hidden) && !$nested_post_id) {
+                $nested_post_id = $achievement->ID;
+            }
+        }
+    }
+
+    //rerurn next or previous achievement without hidden badge id
+    return $nested_post_id;
+
+}
 
 
 /**
