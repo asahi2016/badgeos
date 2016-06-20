@@ -770,7 +770,7 @@ function badgeos_remove_next_hidden_achievement_link($link) {
 
 	return $link;
 }
-add_filter('next_post_link', 'badgeos_remove_next_hidden_achievement_link');
+//add_filter('next_post_link', 'badgeos_remove_next_hidden_achievement_link');
 
 
 /**
@@ -794,4 +794,4 @@ function badgeos_remove_previous_hidden_achievement_link($link) {
 	return $link;
 }
 
-add_filter('previous_post_link', 'badgeos_remove_previous_hidden_achievement_link');
+//add_filter('previous_post_link', 'badgeos_remove_previous_hidden_achievement_link');
