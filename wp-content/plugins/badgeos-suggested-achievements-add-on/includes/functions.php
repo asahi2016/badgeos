@@ -259,20 +259,31 @@ function badgeos_get_next_previous_achievement_id($current_achievement_id , $fla
 
     foreach ($achievement_types as $achievement){
 
+        $continue = false;
+
         //Checks achievement in hidden badges
         if(in_array($achievement->ID, $hidden)) {
+            $continue = true;
+        }else{
+            $continue = false;
+        }
 
-            //Compare next achievement
-            if(($achievement->ID > $current_achievement_id) && $flag == 'next') {
-                $access = true;
-                continue;
-            }
 
-            //Compare previous achievement
-            if(($achievement->ID < $current_achievement_id) && $flag == 'previous') {
-                $access = true;
+        //Compare next achievement
+        if(($achievement->ID > $current_achievement_id) && $flag == 'next') {
+            $access = true;
+
+            if($continue)
                 continue;
-            }
+        }
+
+        //Compare previous achievement
+        if(($achievement->ID < $current_achievement_id) && $flag == 'previous') {
+            $access = true;
+
+            if($continue)
+                continue;
+
         }
 
         if($access) {
