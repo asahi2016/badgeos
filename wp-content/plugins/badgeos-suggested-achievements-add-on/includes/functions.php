@@ -264,14 +264,16 @@ function badgeos_get_next_previous_achievement_id($current_achievement_id , $fla
         if(in_array($achievement->ID, $hidden)) {
 
             //Compare next achievement
-            if($achievement->ID > $current_achievement_id && $flag == 'next')
+            if($achievement->ID > $current_achievement_id && $flag == 'next') {
                 $access = true;
+                continue;
+            }
 
             //Compare previous achievement
-            if($achievement->ID < $current_achievement_id && $flag == 'previous')
+            if($achievement->ID < $current_achievement_id && $flag == 'previous') {
                 $access = true;
-
-            continue;
+                continue;
+            }
         }
 
         if($access) {
