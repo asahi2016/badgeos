@@ -224,83 +224,6 @@ function suggested_achievements_skip_ajax(){
 }
 add_action( 'wp_ajax_suggested_achievements_skip_ajax', 'suggested_achievements_skip_ajax' );
 
-
-/**
- * Get next or previous post id , without hidden achievement id
- *
- * @param $current_achievement_id
- * @param $flag
- * @return integer
- */
-function badgeos_get_next_previous_achievement_id($current_achievement_id , $flag ){
-
-
-    $nested_post_id = null;
-
-    $access = false;
-
-    // Redirecting user page based on achievements
-    $post = get_post( absint( $current_achievement_id ));
-
-    //Get hidden achievements ids
-    $hidden = badgeos_get_hidden_achievement_ids( $post->post_type );
-
-    // Fetching achievement types
-    $param = array(
-        'posts_per_page'   => -1, // All achievements
-        'offset'           => 0,  // Start from first achievement
-        'post_type'=> $post->post_type, // set post type as achievement to filter only achievements
-        'orderby' => 'menu_order',
-        'order' => 'DESC',
-    );
-
-
-    $achievement_types = get_posts($param);
-
-    foreach ($achievement_types as $achievement){
-
-        $continue = false;
-
-        //Checks achievement in hidden badges
-        if(in_array($achievement->ID, $hidden)) {
-            $continue = true;
-        }else{
-            $continue = false;
-        }
-
-
-        //Compare next achievement
-        if(($achievement->ID > $current_achievement_id) && $flag == 'next') {
-            $access = true;
-
-            if($continue)
-                continue;
-        }
-
-        //Compare previous achievement
-        if(($achievement->ID < $current_achievement_id) && $flag == 'previous') {
-            $access = true;
-
-            if($continue)
-                continue;
-
-        }
-
-        if($access) {
-
-            //Get next or previous achievement without hidden badges
-            if (!in_array($achievement->ID, $hidden) && !$nested_post_id) {
-                $nested_post_id = $achievement->ID;
-            }
-        }
-    }
-
-    //rerurn next or previous achievement without hidden badge id
-    return $nested_post_id;
-
-}
-
-
 /**
  * Get skipped achievements of the user
  *
@@ -316,11 +239,14 @@ function badgeos_get_user_skipped_achievements($user_id=0 ){
     return (array) $skipped_items;
 }
 
-
 add_filter('next_post_link', 'badgeos_suggested_achievements_skip_link');
 function badgeos_suggested_achievements_skip_link($link) {
-    global $post;
-    $achievement_id = ( badgeos_is_achievement($post) )? $post->ID : "";
+
+    //Get current achievement id
+    $achievement_id = badgeos_get_current_page_post_id();
+
+    $post = get_post($achievement_id);
+
     $link = str_replace('" rel="next">', '?next" rel="next">', $link);
 
     if( class_exists( 'BadgeOS_Suggested_Achievements' ) &&
