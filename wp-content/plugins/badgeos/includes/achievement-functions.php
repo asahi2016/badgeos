@@ -363,35 +363,6 @@ function badgeos_get_user_earned_achievement_ids( $user_id = 0, $achievement_typ
 }
 
 /**
- * Get an array of post IDs for achievements that are marked as "hidden"
- *
- * @since  1.0.0
- * @param  integer $achievement_id Limit the array to a specific id of achievement
- * @return array  An array of hidden achivement post IDs
- */
-
-function badgeos_get_hidden_achievement_by_id( $achievement_id ) {
-
-	// Grab our hidden achievements
-	global $wpdb;
-
-	//Get hidden submission posts.
-	$hidden_achievements = $wpdb->get_results( $wpdb->prepare(
-		"SELECT * FROM {$wpdb->posts} AS p
-                                 JOIN {$wpdb->postmeta} AS pm
-                                 ON p.ID = pm.post_id
-                                 WHERE p.ID = %d
-                                 AND pm.meta_key = '_badgeos_hidden'
-                                 AND pm.meta_value = 'hidden'
-                                 ",
-		$achievement_id));
-
-	// Return our results
-	return $hidden_achievements;
-}
-
-
-/**
  * Get an array of unique achievement types a user has earned
  *
  * @since  1.0.1
