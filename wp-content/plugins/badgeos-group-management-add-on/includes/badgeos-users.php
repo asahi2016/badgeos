@@ -224,6 +224,10 @@ add_filter('bp_user_can_create_groups','bp_disable_group_creation_for_students')
  */
 function badgeos_schools_control_user_roles($all_roles) {
 
+    if (!function_exists('get_current_screen')) {
+        require_once(ABSPATH . 'wp-admin/includes/screen.php');
+    }
+
     $screen = get_current_screen();
 
     if($screen->id == 'user'){

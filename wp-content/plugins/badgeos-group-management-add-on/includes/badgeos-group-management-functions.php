@@ -238,6 +238,10 @@ function get_deleted_groups_post_ids($user_id){
  */
 function badgeos_school_edit_post_counts($views){
 
+    if (!function_exists('get_current_screen')) {
+        require_once(ABSPATH . 'wp-admin/includes/screen.php');
+    }
+
     //Get current screen details
     $screen = get_current_screen();
 

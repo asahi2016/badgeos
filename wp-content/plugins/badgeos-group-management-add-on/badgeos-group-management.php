@@ -1,9 +1,11 @@
 <?php
 /**
  * Plugin Name: BadgeOS Group Management Add-On
- * Plugin URI:
+ * Plugin URI: http://www.badgeos.org/
  * Description: This BadgeOS add-on integrates BadgeOS features with Schools.
  * Text Domain: badgeos-group-management
+ * Author: LearningTimes
+ * Version: 1.0.0
  */
 
 class BadgeOS_Group_Management {
