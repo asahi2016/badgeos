@@ -262,8 +262,13 @@ function badgeos_achievement_user_exceeded_max_earnings( $user_id = 0, $achievem
 
 	$max_earnings = get_post_meta( $achievement_id, '_badgeos_maximum_earnings', true);
 
+	//Infinite maximum earnings check
+    if($max_earnings == '-1'){
+		return false;
+	}
+
 	// If the badge has an earning limit, and we've earned it bdfore...
-	if ( $max_earnings != -1 && $user_has_badge = badgeos_get_user_achievements( array( 'user_id' => absint( $user_id ), 'achievement_id' => absint( $achievement_id ) ) ) ) {
+	if ( $max_earnings && $user_has_badge = badgeos_get_user_achievements( array( 'user_id' => absint( $user_id ), 'achievement_id' => absint( $achievement_id ) ) ) ) {
 		// If we've earned it as many (or more) times than allowed,
 		// then we have exceeded maximum earnings, thus true
 		if ( count( $user_has_badge ) >= $max_earnings ) {
