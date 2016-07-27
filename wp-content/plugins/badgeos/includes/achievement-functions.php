@@ -385,7 +385,8 @@ function badgeos_get_user_earned_achievement_ids( $user_id = 0, $achievement_typ
 	// Grab our earned achievements
 	$earned_achievements = badgeos_get_user_achievements( array(
 		'user_id'          => $user_id,
-		'achievement_type' => $achievement_type
+		'achievement_type' => $achievement_type,
+		'display' => true
 	) );
 
 	foreach ( $earned_achievements as $achievement )

@@ -59,7 +59,7 @@ function badgeos_get_user_achievements( $args = array() ) {
 
 			//unset hidden achievements
 			$hidden = badgeos_get_hidden_achievement_by_id( $achievement->ID );
-			if( !empty( $hidden ))
+			if( !empty( $hidden ) && isset($args['display']))
 				unset($achievements[$key]);
 
 		}
