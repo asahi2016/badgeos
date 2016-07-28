@@ -648,6 +648,10 @@ function badgeos_render_submission( $submission = null, $args = array() ) {
 	$output .= '</div><!-- .badgeos-submission -->';
 
 
+	if( badgeos_get_hidden_achievement_by_id( $achievement_id ) ){
+		$output = '';
+	}
+
 	// Return our filterable output
 	return apply_filters( 'badgeos_render_submission', $output, $submission );
 }
